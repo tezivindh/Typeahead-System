@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #090d16;
+    --foreground: #f8fafc;
+    --card: #0f172a;
+    --card-foreground: #f1f5f9;
+    --border: #1e293b;
+    --muted: #64748b;
+    --primary: #38bdf8;
+    --accent: #818cf8;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Polished Card Container */
+.panel-premium {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom micro-scrollbar for key viewer */
+.scroll-premium::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scroll-premium::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-premium::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.scroll-premium::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
