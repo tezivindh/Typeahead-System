@@ -129,6 +129,16 @@ Typeahead System/
 - npm
 - MongoDB local binary (or service) installed on Linux system
 
+### Dataset Setup (Raw Source)
+The codebase includes the pre-processed `dataset.csv` (109,600 records), allowing you to run the application immediately. If you want to re-process or expand the query dataset from the raw source:
+1. Download the official **ORCAS Dataset** (tab-separated queries file) from: [Microsoft MS MARCO ORCAS Website](https://microsoft.github.io/msmarco/ORCAS.html).
+2. Create a folder named `datasets/` in the project root.
+3. Extract and place the downloaded file `orcas-doctrain-queries.tsv` inside it:
+   ```text
+   Typeahead System/datasets/orcas-doctrain-queries.tsv
+   ```
+4. Run `npx ts-node backend/src/dataset/generate-dataset.ts` to re-generate the `dataset.csv` file.
+
 ### 1. Database Setup
 Start MongoDB locally using the workspace-contained script. This launches a daemon using local file locks in `mongodb-data/` (no root access needed):
 ```bash
