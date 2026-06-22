@@ -115,7 +115,6 @@ Typeahead System/
 │   │   └── types/         # TypeScript declarations
 │   ├── tsconfig.json
 │   └── package.json
-├── start-mongo.sh         # Shell script to start local database daemon
 ├── dataset.csv            # 109,600 row generated dataset
 └── README.md
 ```
@@ -127,7 +126,7 @@ Typeahead System/
 ### Prerequisites
 - Node.js (v18+)
 - npm
-- MongoDB local binary (or service) installed on Linux system
+- MongoDB local binary (or service) installed on system
 
 ### Dataset Setup (Raw Source)
 The codebase includes the pre-processed `dataset.csv` (109,600 records), allowing you to run the application immediately. If you want to re-process or expand the query dataset from the raw source:
@@ -140,9 +139,9 @@ The codebase includes the pre-processed `dataset.csv` (109,600 records), allowin
 4. Run `npx ts-node backend/src/dataset/generate-dataset.ts` to re-generate the `dataset.csv` file.
 
 ### 1. Database Setup
-Start MongoDB locally using the workspace-contained script. This launches a daemon using local file locks in `mongodb-data/` (no root access needed):
+Ensure you have a MongoDB instance running locally on default port `27017`. You can start a local instance using your system's service manager or run `mongod` directly specifying the local data directory:
 ```bash
-./start-mongo.sh
+mongod --dbpath ./mongodb-data
 ```
 
 ### 2. Backend Setup
