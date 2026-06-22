@@ -123,6 +123,13 @@ Typeahead System/
 
 ## Setup Instructions
 
+### 1. Clone the Repository
+Clone the codebase to your local workspace:
+```bash
+git clone https://github.com/tezivindh/Typeahead-System.git
+cd "Typeahead System"
+```
+
 ### Prerequisites
 - Node.js (v18+)
 - npm
@@ -138,13 +145,13 @@ The codebase includes the pre-processed `dataset.csv` (109,600 records), allowin
    ```
 4. Run `npx ts-node backend/src/dataset/generate-dataset.ts` to re-generate the `dataset.csv` file.
 
-### 1. Database Setup
+### 2. Database Setup
 Ensure you have a MongoDB instance running locally on default port `27017`. You can start a local instance using your system's service manager or run `mongod` directly specifying the local data directory:
 ```bash
 mongod --dbpath ./mongodb-data
 ```
 
-### 2. Backend Setup
+### 3. Backend Setup
 Navigate to the `backend` folder, copy settings, install dependencies, and run in dev mode:
 ```bash
 cd backend
@@ -152,7 +159,7 @@ npm install
 npm run dev
 ```
 
-### 3. Frontend Setup
+### 4. Frontend Setup
 Navigate to the `frontend` folder, install dependencies, and run in dev mode:
 ```bash
 cd ../frontend
